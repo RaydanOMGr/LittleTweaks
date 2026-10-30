@@ -1,0 +1,22 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.andreasmelone.littletweaks.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "ServerLoginPacketListenerImplMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  },
+  "client": [
+    "OptionsMixin",
+    "SectionRenderDispatcherMixin",
+    "sodium.IgnoringSectionRenderDispatcherMixin"
+  ],
+  "mixinextras": {
+    "minVersion": "0.5.4"}
+}

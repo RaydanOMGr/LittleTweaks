@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "littletweaks",
+  "version": "${version}",
+  "name": "littletweaks",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "Unlicense",
+  "icon": "assets/littletweaks/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "me.andreasmelone.littletweaks.LittleTweaksMod"
+    ]
+  },
+  "mixins": [
+    "littletweaks.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "minecraft": "${minecraft_version}",
+    "sodium": "*"
+  }
+}
