@@ -13,6 +13,9 @@
     "requireAnnotations": true
   },
   "client": [
+    "GlDeviceMixin",
+    "GlHeuristicsMixin",
+    "LevelLoadTrackerMixin",
     "OptionsMixin",
     "SectionRenderDispatcherMixin",
     "sodium.IgnoringSectionRenderDispatcherMixin"
