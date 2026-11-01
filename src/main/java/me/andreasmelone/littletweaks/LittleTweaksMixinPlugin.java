@@ -10,6 +10,7 @@ import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,8 +31,9 @@ public class LittleTweaksMixinPlugin implements IMixinConfigPlugin {
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
         Map<String, String> requirementsMap = new HashMap<>();
 
-        try {
-            ClassReader reader = new ClassReader(mixinClassName);
+        try(InputStream in = DummyClass.class.getClassLoader().getResourceAsStream(mixinClassName.replace('.', '/') + ".class")) {
+            if(in == null) throw new IOException("No resource " + mixinClassName);
+            ClassReader reader = new ClassReader(in);
             ClassNode classNode = new ClassNode();
             reader.accept(classNode, 0);
 
@@ -41,6 +43,7 @@ public class LittleTweaksMixinPlugin implements IMixinConfigPlugin {
                 break;
             }
         } catch (IOException e) {
+            System.err.println("Failed to read " + mixinClassName + " annotations");
             e.printStackTrace();
         }
 
