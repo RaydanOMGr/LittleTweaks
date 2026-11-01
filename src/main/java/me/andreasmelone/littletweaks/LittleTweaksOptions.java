@@ -19,6 +19,8 @@ public class LittleTweaksOptions {
     public static final Option<Boolean> ALLOW_READ_LSB_RELEASE = Option.bool("allow_read_lsb_release", false);
     public static final Option<Boolean> ALLOW_SERVICE_DISCOVERY = Option.bool("allow_service_discovery", false);
     public static final Option<Boolean> ALLOW_NARRATOR = Option.bool("allow_narrator", false);
+    public static final Option<Boolean> ALLOW_REALMS_AVAILABILITY_CHECKS = Option.bool("allow_realms_availability_checks", false);
+    public static final Option<Boolean> ALLOW_FETCH_PROFILE = Option.bool("allow_fetch_profile", false);
 
     public static final Logger LOGGER = LogUtils.getLogger();
 
