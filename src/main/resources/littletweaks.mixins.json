@@ -4,7 +4,10 @@
   "package": "me.andreasmelone.littletweaks.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
-    "ServerLoginPacketListenerImplMixin"
+    "MinecraftServicesDiscoveryServiceMixin",
+    "NarratorMixin",
+    "ServerLoginPacketListenerImplMixin",
+    "oshi.LinuxOperatingSystemMixin"
   ],
   "injectors": {
     "defaultRequire": 1
@@ -13,13 +16,15 @@
     "requireAnnotations": true
   },
   "client": [
-    "GlDeviceMixin",
-    "GlHeuristicsMixin",
     "LevelLoadTrackerMixin",
     "OptionsMixin",
-    "SectionRenderDispatcherMixin",
-    "sodium.IgnoringSectionRenderDispatcherMixin"
+    "gldevice.GlDeviceMixin",
+    "gldevice.GlHeuristicsMixin",
+    "sodium.IgnoringSectionRenderDispatcherMixin",
+    "sodium.SectionRenderDispatcherMixin"
   ],
   "mixinextras": {
-    "minVersion": "0.5.4"}
+    "minVersion": "0.5.4"
+  },
+  "plugin": "me.andreasmelone.littletweaks.LittleTweaksMixinPlugin"
 }

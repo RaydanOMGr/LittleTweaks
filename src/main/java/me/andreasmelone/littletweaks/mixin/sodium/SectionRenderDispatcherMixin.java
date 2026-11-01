@@ -1,10 +1,11 @@
-package me.andreasmelone.littletweaks.mixin;
+package me.andreasmelone.littletweaks.mixin.sodium;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.mojang.blaze3d.vertex.StagingBuffer;
 import com.mojang.renderpearl.api.device.GpuDevice;
 import me.andreasmelone.littletweaks.LittleTweaksMod;
+import me.andreasmelone.littletweaks.annotate.RequiresMod;
 import net.minecraft.client.renderer.chunk.SectionRenderDispatcher;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -14,6 +15,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
+
+@RequiresMod("sodium")
 @Mixin(SectionRenderDispatcher.class)
 public class SectionRenderDispatcherMixin {
     @Shadow

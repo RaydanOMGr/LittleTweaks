@@ -1,6 +1,7 @@
 package me.andreasmelone.littletweaks.mixin.sodium;
 
 import me.andreasmelone.littletweaks.LittleTweaksMod;
+import me.andreasmelone.littletweaks.annotate.RequiresMod;
 import net.caffeinemc.mods.sodium.client.util.IgnoringSectionRenderDispatcher;
 import net.minecraft.TracingExecutor;
 import net.minecraft.client.renderer.RenderBuffers;
@@ -14,6 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.function.Consumer;
 
+@RequiresMod("sodium")
 @Mixin(IgnoringSectionRenderDispatcher.class)
 public class IgnoringSectionRenderDispatcherMixin {
     @Inject(
