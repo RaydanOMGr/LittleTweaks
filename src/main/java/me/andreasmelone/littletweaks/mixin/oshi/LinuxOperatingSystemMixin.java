@@ -16,7 +16,7 @@ public class LinuxOperatingSystemMixin {
             cancellable = true
     )
     private static void dontReadOsRelease(CallbackInfoReturnable<Triplet<String, String, String>> cir) {
-        if(LittleTweaksOptions.Opt.ALLOW_READ_OS_RELEASE.get()) {
+        if(LittleTweaksOptions.ALLOW_READ_OS_RELEASE.get()) {
             cir.setReturnValue(null);
         }
     }
@@ -27,7 +27,7 @@ public class LinuxOperatingSystemMixin {
             cancellable = true
     )
     private static void dontReadLsbRelease(CallbackInfoReturnable<Triplet<String, String, String>> cir) {
-        if(LittleTweaksOptions.Opt.ALLOW_READ_LSB_RELEASE.get()) {
+        if(LittleTweaksOptions.ALLOW_READ_LSB_RELEASE.get()) {
             cir.setReturnValue(null);
         }
     }

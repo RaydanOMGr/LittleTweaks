@@ -14,13 +14,11 @@ import java.nio.file.Path;
 import java.util.Properties;
 
 public class LittleTweaksOptions {
-    public interface Opt {
-        Option<Boolean> ALLOW_EXT_BUFFER_STORAGE = Option.bool("allow_ext_buffer_storage", false);
-        Option<Boolean> ALLOW_READ_OS_RELEASE = Option.bool("allow_read_os_release", false);
-        Option<Boolean> ALLOW_READ_LSB_RELEASE = Option.bool("allow_read_lsb_release", false);
-        Option<Boolean> ALLOW_SERVICE_DISCOVERY = Option.bool("allow_service_discovery", false);
-        Option<Boolean> ALLOW_NARRATOR = Option.bool("allow_narrator", false);
-    }
+    public static final Option<Boolean> ALLOW_EXT_BUFFER_STORAGE = Option.bool("allow_ext_buffer_storage", false);
+    public static final Option<Boolean> ALLOW_READ_OS_RELEASE = Option.bool("allow_read_os_release", false);
+    public static final Option<Boolean> ALLOW_READ_LSB_RELEASE = Option.bool("allow_read_lsb_release", false);
+    public static final Option<Boolean> ALLOW_SERVICE_DISCOVERY = Option.bool("allow_service_discovery", false);
+    public static final Option<Boolean> ALLOW_NARRATOR = Option.bool("allow_narrator", false);
 
     public static final Logger LOGGER = LogUtils.getLogger();
 

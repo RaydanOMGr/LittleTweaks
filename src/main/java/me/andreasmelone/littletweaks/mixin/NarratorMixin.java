@@ -15,7 +15,7 @@ public interface NarratorMixin {
             cancellable = true
     )
     private static void disableNarrator(CallbackInfoReturnable<Narrator> cir) {
-        if(!LittleTweaksOptions.Opt.ALLOW_NARRATOR.get()) {
+        if(!LittleTweaksOptions.ALLOW_NARRATOR.get()) {
             cir.setReturnValue(Narrator.EMPTY);
         }
     }

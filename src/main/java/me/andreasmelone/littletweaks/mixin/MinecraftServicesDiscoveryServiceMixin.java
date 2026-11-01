@@ -25,7 +25,7 @@ public class MinecraftServicesDiscoveryServiceMixin {
             at = @At("TAIL")
     )
     public void onInit(Proxy proxy, boolean servicesKeySetEnabled, Supplier discoverySupplier, CallbackInfo ci) {
-        if(!LittleTweaksOptions.Opt.ALLOW_SERVICE_DISCOVERY.get()) {
+        if(!LittleTweaksOptions.ALLOW_SERVICE_DISCOVERY.get()) {
             this.servicesKeySetEnabled = false;
         }
     }

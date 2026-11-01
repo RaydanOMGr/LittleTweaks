@@ -16,6 +16,6 @@ public class GlHeuristicsMixin {
             at = @At(value = "INVOKE", target = "Ljava/util/Set;contains(Ljava/lang/Object;)Z", ordinal = 6)
     )
     public boolean doesNotContainBufferExt(Set instance, Object o, Operation<Boolean> original) {
-        return LittleTweaksOptions.Opt.ALLOW_EXT_BUFFER_STORAGE.get() && original.call(instance, o);
+        return LittleTweaksOptions.ALLOW_EXT_BUFFER_STORAGE.get() && original.call(instance, o);
     }
 }

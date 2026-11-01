@@ -24,7 +24,7 @@ public class GlDeviceMixin {
             at = @At("HEAD")
     )
     private static void disableBufferExt(CallbackInfo ci) {
-        USE_GL_ARB_buffer_storage = LittleTweaksOptions.Opt.ALLOW_EXT_BUFFER_STORAGE.get();
+        USE_GL_ARB_buffer_storage = LittleTweaksOptions.ALLOW_EXT_BUFFER_STORAGE.get();
         LogUtils.getLogger().info("GL_ARB_buffer_storage: {}", USE_GL_ARB_buffer_storage);
     }
 
@@ -33,6 +33,6 @@ public class GlDeviceMixin {
             at = @At(value = "INVOKE", target = "Lcom/mojang/renderpearl/backend/opengl/BufferStorage;create(Lorg/lwjgl/opengl/GLCapabilities;Ljava/util/Set;Z)Lcom/mojang/renderpearl/backend/opengl/BufferStorage;")
     )
     public BufferStorage dontMakeImmutableBufs(GLCapabilities capabilities, Set<String> enabledExtensions, boolean forceMutable, Operation<BufferStorage> original) {
-        return original.call(capabilities, enabledExtensions, !LittleTweaksOptions.Opt.ALLOW_EXT_BUFFER_STORAGE.get() || forceMutable);
+        return original.call(capabilities, enabledExtensions, !LittleTweaksOptions.ALLOW_EXT_BUFFER_STORAGE.get() || forceMutable);
     }
 }
